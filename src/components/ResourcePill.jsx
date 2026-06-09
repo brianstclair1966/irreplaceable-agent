@@ -5,6 +5,8 @@ const ICONS = {
   doc: '📝',
   video: '▶️',
   link: '🤖',
+  survey: '🧭',
+  blueprint: '📐',
 }
 
 export default function ResourcePill({ label, meta, type, url }) {
