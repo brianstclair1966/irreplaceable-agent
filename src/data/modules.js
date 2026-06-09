@@ -60,7 +60,7 @@ const modules = [
     intro:
       'Let’s be honest about where the market is. Rates are up and down, clients are unsure, some of you feel busy and some feel stuck — and most agents don’t really know what to do about it. Here’s the thing: it’s not a work problem. Most agents care, most are working, most are trying. They’re just trying to win the wrong way. Irreplaceable Agent isn’t normal training — no scripts, no fluff, no theory. It’s a system built around how YOU actually win.',
     whyItMatters: [
-      'AI is compressing mid-level work — capability is being reduced 20–30% across industries, including real estate. The agents who use AI well will replace the ones who don’t.',
+      'AI is already reshaping knowledge work — real estate included. The agents who use it well will replace the ones who don’t.',
       'There isn’t one right way to win. Some agents win with systems, some with relationships, some with speed, some with strategy — and they all win.',
       'Most training says “do it THIS way.” It works for some people and not others. That’s why agents burn out or stay inconsistent.',
       'The gap between average and elite is widening. Clear agents win. This program is about getting you clear.',
@@ -204,7 +204,7 @@ const modules = [
       {
         heading: 'Information lives here. Decisions live there.',
         paras: [
-          'Information lives in the basics: What is escrow? How much are mortgage rates? What neighborhoods are near the school? What are the market trends? That’s NOT where you win — buyers can get all of it instantly.',
+          'Information lives in the basics: What is escrow? How much are mortgage rates? What neighborhoods are near the school? What are the market trends? That’s NOT where you win — buyers can get all of it instantly. And when AI hands them a confident wrong answer, you’re the one who catches it.',
           'Decisions live in the specifics — almost every time. This specific house, at this specific price, for this specific buyer. When to negotiate and when to walk. What that inspection finding actually means. Why this neighborhood commands a premium. Whether this is the moment or the wrong moment. They don’t come to you asking “What is this?” — they ask “Should I do this?” Completely different question, completely different skill.',
         ],
       },
@@ -224,12 +224,12 @@ const modules = [
         resourceRefs: ['6th Ave AI Playbook'],
         paras: [
           'AI can’t make the decision — but it can help you make a better one, faster. Brain-dump a showing into a dictation app and let AI organize your thoughts into a clean recap email. Drop in an inspection report and your buyer’s requests and ask AI to estimate costs and draft what to say yes and no to. The agent thinks, AI organizes; the agent decides, AI supports; the agent adjusts, AI gets better.',
-          'Think about your last five closed deals. Where did YOU make the critical decision? What did the buyer need from you that AI couldn’t provide? What was the moment they trusted your judgment? Know those answers — that’s your value, and that’s why they choose you.',
+          'Think about your last five closed deals (or recent showings, if you’re newer). Where did YOU make the critical decision? What did the buyer need from you that AI couldn’t provide? What was the moment they trusted your judgment? Know those answers — that’s your value, and that’s why they choose you.',
         ],
       },
     ],
     actionSteps: [
-      'Review your last 5 closed deals and write down the exact moment YOU made the decision that AI couldn’t. That’s your irreplaceable value.',
+      'Review your last 5 closed deals (or recent showings, if you’re newer) and write down the exact moment YOU made the decision that AI couldn’t. That’s your irreplaceable value.',
       'On a live deal this week, use AI to support — not make — a decision: organize a showing recap, summarize an inspection, or pressure-test a price.',
       'Catch yourself the next time you hesitate or over-explain. Practice leading with a clear recommendation instead of deferring to the client.',
     ],
@@ -333,6 +333,7 @@ const modules = [
       'Don’t use AI to avoid your strength — that’s how you lose your edge and become the system instead of running it.',
       'Don’t let “the AI told me” become your decision-making. You make the call; AI supports it.',
       'Don’t settle for generic prompts — generic AI doesn’t change anything.',
+      'Don’t paste a client’s private or financial details into AI — strip names and numbers first.',
     ],
     rhythm: [
       'This session: match AI to your strength, not someone else’s.',
@@ -482,7 +483,7 @@ const modules = [
       {
         heading: 'If you’re clear, be visible',
         paras: [
-          'Most agents stay invisible because their best thinking never leaves their conversations. You don’t need more content — you need to document what you already do. Share real decisions. Say what you actually see. Let your system show up publicly. When you do, you don’t just get chosen — you get found. Agents are already landing listings from clients who found them through AI search because their thinking was visible and specific.',
+          'Most agents stay invisible because their best thinking never leaves their conversations. You don’t need more content — you need to document what you already do. Share real decisions. Say what you actually see. Let your system show up publicly. When you do, you don’t just get chosen — you get found. I’ve personally landed listings from clients who found me through ChatGPT — because my thinking was visible and specific. That’s where this is going.',
         ],
       },
     ],
