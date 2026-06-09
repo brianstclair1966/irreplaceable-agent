@@ -32,6 +32,8 @@ export const PROGRAM = {
   mantra: 'AI won’t replace you. Agents using AI will. Clarity is the edge.',
   win: 'A 6th Ave Irreplaceable Agent understands how they win, builds around it, and uses clarity and AI to serve clients at a level that can’t be replaced.',
   playbookUrl: 'https://www.6thavehomesagents.com/6th-ave-ai-playbook',
+  cultureIndexUrl: 'https://bit.ly/6thAveCultureIndex',
+  blueprintPath: '/blueprint',
   heroImage:
     'https://images.squarespace-cdn.com/content/v1/63769174e6778950255aed67/d68f77d6-e655-4767-9d67-c446a69b71b5/Irreplaceable+Agent+Title.jpg',
   copyright:
@@ -82,7 +84,7 @@ const modules = [
         heading: 'What this program actually is',
         resourceRefs: ['6th Ave AI Playbook'],
         paras: [
-          'This is not a course you pass — it’s a system you run. Over the next six sessions we’ll cover what Irreplaceable means, how you win, what actually moves your business, using AI the right way, building your personal system, and locking it in. Each session builds on the last. In Session 5 you get a personalized Blueprint built from your Culture Index, your past production, and how you naturally operate.',
+          'This is not a course you pass — it’s a system you run. Over the next six sessions we’ll cover what Irreplaceable means, how you win, what actually moves your business, using AI the right way, building your personal system, and locking it in. Each session builds on the last. Session 5 breaks down the Blueprint — the personalized operating system built from your Culture Index, your past production, and how you naturally operate — and shows you how to request your own.',
           'To support how you work right now, the 6th Ave AI Playbook is already live on the back-site — a growing library of prompts for real situations: listing packages, pricing, offers, social posts, objection reframes. Use it on a real deal this week. Don’t try to learn it all; just remove one piece of friction.',
         ],
       },
@@ -153,12 +155,12 @@ const modules = [
         heading: 'Start using one tool now',
         resourceRefs: ['6th Ave AI Playbook'],
         paras: [
-          'You don’t need your full system yet — that comes in Session 5. But you can start using tools that help you win now. Not to replace how you work — to support it. When you’re in a real deal — a listing, a price, an offer — that’s when you reach for the Playbook. Don’t try to learn it all. Use one tool this week on one real situation. That’s how this starts.',
+          'You don’t need your full system yet — Session 5 shows you how it comes together. But you can start using tools that help you win now. Not to replace how you work — to support it. When you’re in a real deal — a listing, a price, an offer — that’s when you reach for the Playbook. Don’t try to learn it all. Use one tool this week on one real situation. That’s how this starts.',
         ],
       },
     ],
     actionSteps: [
-      'Name your primary way of winning (fast / systematic / strategic) and the secondary you mix in. That’s what we’ll build your system around in Session 5.',
+      'Name your primary way of winning (fast / systematic / strategic) and the secondary you mix in. It’s the foundation your Blueprint is built on (more in Session 5).',
       'For the next few weeks, pay attention: When do you feel most confident? When do you feel stuck? What feels natural? What feels forced? Jot down real answers.',
       'Use one Playbook tool this week on a live listing, pricing, or offer situation — to support how you already work, not replace it.',
     ],
@@ -209,7 +211,7 @@ const modules = [
       {
         heading: 'Where your three ways win',
         paras: [
-          'Your strength shapes where you add the most value in the decision moment. None are the same; all are valuable; all are necessary.',
+          'You found your lane in Session 2 — here’s where each way actually wins the decision moment. None are the same; all are valuable; all are necessary.',
         ],
         list: [
           'Fast agents win in timing and momentum — go/no-go calls, moving on the right deal before someone else does, negotiating from strength. You help clients move.',
@@ -365,10 +367,17 @@ const modules = [
     ],
     lesson: [
       {
+        heading: 'First, know your wiring: the Culture Index',
+        resourceRefs: ['Take Your Culture Index'],
+        paras: [
+          'Your Blueprint is built on your Culture Index — a short, free work-style survey that maps how you’re naturally wired: how fast you move, how much structure you need, how you make decisions, and what energizes or drains you. It’s the same profile we use to understand how each agent operates, and it’s the foundation everything else is built on. If you haven’t taken it yet, take it now — it’s about 10 minutes, and your results feed directly into your Blueprint.',
+        ],
+      },
+      {
         heading: 'What’s in your Blueprint',
         paras: [
           'This isn’t theory — it’s a working system that replaces guesswork. Your Blueprint includes your Operating System, your Decision Framework, your AI Engine, your Daily Non-Negotiables, your Feedback Loop, and your Growth Corridor. It’s built in four steps: (1) your Culture Index — how you naturally think; (2) your Three Ways — where you win; (3) your Decision Triggers — the patterns you recognize better than anyone; and (4) your AI Engine — exactly how AI supports your way of thinking.',
-          'If you’re Fast/Decisive, your system is built for speed and momentum. If you’re Systematic, it’s built for process and certainty. If you’re Strategic, it’s built for positioning and opportunity. Same business — different operating systems. Your AI Engine isn’t generic ChatGPT prompts; it’s prompts built around your Culture Index and decision patterns, so the AI responds the way YOU naturally think.',
+          'Your operating style follows your primary way of winning — speed and momentum, process and certainty, or positioning and opportunity. Same business, different operating systems. And your AI Engine isn’t generic ChatGPT prompts; it’s built around your Culture Index and decision patterns, so the AI responds the way YOU naturally think.',
         ],
       },
       {
@@ -382,9 +391,9 @@ const modules = [
           'Explain your business — market, price point, clients, schedule, goals (the business you actually run, not the one you wish you had).',
           'Explain your strengths — relationships, organization, analysis, negotiation, systems, follow-through.',
           'Show AI where you need leverage — overthinking, inconsistency, follow-up hesitation, the friction that slows you down.',
-          'Teach AI your voice — paste in your emails, texts, listing descriptions; tell it to write like you.',
+          'Teach AI your voice — paste in samples of your own writing (listing descriptions, marketing copy, social posts) with any client names or private details removed, and tell it to write like you.',
           'Give AI a role — strategist, execution assistant, relationship coach, deal analyst — matched to how you operate.',
-          'Use ONE thread consistently — dedicated threads per listing, buyer, and negotiation. Context compounds.',
+          'Use ONE thread consistently — keep a dedicated thread per listing or deal so context builds, using non-confidential details only. Context compounds.',
         ],
       },
       {
@@ -392,19 +401,27 @@ const modules = [
         resourceRefs: ['AI Aligned Testimonial Email'],
         paras: [
           'Your reviews are no longer just for people — they’re for systems. The internet is teaching AI who is trustworthy, and detailed reviews that name your specific niche (“move-up buyer agent,” “luxury listing specialist”) become AI-readable trust signals that help AI connect the right clients to you. This isn’t manipulation — it’s helping the internet accurately understand how you serve people. Use the AI-Aligned Testimonial Email to request reviews that actually describe your expertise.',
-          'One note on privacy: never paste sensitive client information — names or private data — into AI platforms, and keep training-on-your-data settings off so your work stays in your private account.',
+          'A word on privacy — this part matters. It’s fine to paste in your own marketing copy, listing descriptions, general scripts, and public market data. Never paste a client’s private or financial information — names, home or email addresses, account or loan numbers, Social Security numbers, contract dollar figures, or anything from a signed agreement. Strip identifying details first (say “my buyer” instead of a name), keep your AI tool’s “train on my data” setting turned off, and follow your brokerage’s technology and confidentiality policies. When in doubt, leave it out.',
+        ],
+      },
+      {
+        heading: 'Get your own Blueprint',
+        resourceRefs: ['Request Your Blueprint'],
+        paras: [
+          'This session shows you what a Blueprint is and the habits that make it work. Want one built specifically for you? It’s an optional, no-cost add-on: share your Culture Index results and a snapshot of your past production, and Brian builds your personalized Blueprint by hand — your operating system, decision framework, AI engine, and daily non-negotiables, mapped to exactly how you win. Submit yours and he’ll put it together.',
         ],
       },
     ],
     actionSteps: [
-      'Complete the 7-step AI alignment process (Align Your AI — Start Here) before you open your Blueprint — about 20–30 minutes.',
-      'Set up dedicated AI threads for each active listing, buyer, and negotiation so context compounds over time.',
+      'Take your Culture Index survey if you haven’t — about 10 minutes, and it’s the foundation your Blueprint is built on.',
+      'Complete the 7-step AI alignment process (Align Your AI — Start Here) — about 20–30 minutes.',
       'Send the AI-Aligned Testimonial Email to a recent happy client to capture a specific, niche-naming review.',
+      'Want a Blueprint built for you? Submit your Culture Index and past production on the Request Your Blueprint page.',
     ],
     pitfalls: [
       'Don’t use your Blueprint like someone else would — if you modify it to match generic training, it breaks.',
       'Don’t skip the AI alignment step — without it, AI stays generic because it still thinks you’re generic.',
-      'Don’t paste private client data into AI, and keep crowdsourced-training settings off.',
+      'Never paste a client’s private or financial details into AI — strip names and numbers first, keep “train on my data” off, and follow brokerage policy.',
     ],
     rhythm: [
       'First 2 weeks: get used to the rhythm of your system.',
@@ -416,6 +433,8 @@ const modules = [
     notesUrl: 'https://docs.google.com/document/d/16Vx92vrLnJIOv9JfbX1IO3MsxTGMJOBGQ1w6-j0YTHA/edit',
     slidesUrl: 'https://drive.google.com/file/d/1Fbhit6fYsda9eoacW49qtKaP3XVOFghJ/view',
     resources: [
+      { label: 'Take Your Culture Index', meta: 'Survey · ~10 min', type: 'survey', url: 'https://bit.ly/6thAveCultureIndex' },
+      { label: 'Request Your Blueprint', meta: 'Free · built for you', type: 'blueprint', url: '/blueprint' },
       { label: 'Align Your AI — Start Here', meta: 'PDF · 7-step setup', type: 'pdf', url: 'https://drive.google.com/file/d/1YFruPS3sK5h2SHEzhLOzfsauEq68drfE/view' },
       { label: 'AI Aligned Testimonial Email', meta: 'PDF', type: 'pdf', url: 'https://drive.google.com/file/d/1f0oQfbDy-EIlOR2NuGjyl5ovfyUKE2Aw/view' },
       { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: 'https://www.6thavehomesagents.com/6th-ave-ai-playbook' },
@@ -457,7 +476,7 @@ const modules = [
         heading: 'The whole game: extreme ownership',
         paras: [
           'Let’s be honest. You’ve heard a lot, you’ve had ideas, you’ve seen what works — but none of that matters if you don’t use it. Agents learn things, get motivated, say “this makes sense,” and then go right back to the same habits. Not because the training was wrong, but because they didn’t run it. This business rewards what you actually do.',
-          'You already know enough. You know how you win, you know where you get paid, you know how to use AI to support it, and you’ve seen what happens when it’s consistent. You’re missing one thing: consistency. That’s why your Blueprint is different — it fits you, which means you can actually run it. If you run your system, your business improves. If you don’t, nothing changes. That’s not opinion; that’s how this works.',
+          'You already know enough. You know how you win, you know where you get paid, you know how to use AI to support it, and you’ve seen what happens when it’s consistent. You’re missing one thing: consistency. That’s why a system built around you is different — it fits how you work, which means you’ll actually run it. If you run your system, your business improves. If you don’t, nothing changes. That’s not opinion; that’s how this works.',
         ],
       },
       {
@@ -469,7 +488,7 @@ const modules = [
     ],
     actionSteps: [
       'Write a one-paragraph vision for the business you actually want — then let AI interview you to sharpen it.',
-      'Time-block your daily non-negotiables and commit to running your Blueprint for the next 30 days.',
+      'Time-block your daily non-negotiables and commit to running your system for the next 30 days.',
       'Document one real decision publicly this week (a post, a short video, a note) so your judgment becomes visible — and findable.',
     ],
     pitfalls: [
