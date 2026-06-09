@@ -35,7 +35,8 @@ export const PROGRAM = {
   heroImage:
     'https://images.squarespace-cdn.com/content/v1/63769174e6778950255aed67/d68f77d6-e655-4767-9d67-c446a69b71b5/Irreplaceable+Agent+Title.jpg',
   copyright:
-    '© 2025 Brian St. Clair. All Rights Reserved. Irreplaceable Agent is a Real Estate Growth Training Program created by Brian St. Clair and used by 6th Ave Homes under license.',
+    '© 2025 Brian St. Clair. All Rights Reserved. Irreplaceable Agent is a Real Estate Growth Training Program created by Brian St. Clair',
+  license: 'Used by 6th Ave Homes under license.',
 }
 
 export const PHASES = {
