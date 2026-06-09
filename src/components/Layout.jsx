@@ -26,6 +26,7 @@ export default function Layout({ children }) {
       <footer className="bg-white border-t border-gray-200 text-gray-500 text-xs py-8 mt-16">
         <div className="max-w-5xl mx-auto px-6 text-center space-y-1">
           <p>{PROGRAM.copyright}</p>
+          <p>{PROGRAM.license}</p>
         </div>
       </footer>
     </div>
