@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout from '@/components/Layout'
 import ModuleCard from '@/components/ModuleCard'
 import ProgressBar from '@/components/ProgressBar'
@@ -67,6 +68,27 @@ export default function Home() {
             </div>
           </div>
         ))}
+      </section>
+
+      {/* Blueprint CTA */}
+      <section className="max-w-5xl mx-auto px-6 pb-16">
+        <div className="bg-brand-navy text-white rounded-2xl p-8 sm:p-10 text-center">
+          <p className="text-brand-coral font-semibold uppercase tracking-widest text-xs mb-2">
+            Built for you
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-extrabold mb-3">Get your personal Blueprint</h2>
+          <p className="text-gray-200 max-w-2xl mx-auto leading-relaxed">
+            Your Blueprint is an optional, no-cost add-on built around exactly how you win. Share
+            your Culture Index results and a snapshot of your past production, and Brian builds your
+            operating system, decision framework, AI engine, and daily non-negotiables by hand.
+          </p>
+          <Link
+            href={PROGRAM.blueprintPath}
+            className="inline-block mt-6 bg-brand-coral text-white font-semibold px-7 py-3 rounded-full hover:bg-opacity-90 transition"
+          >
+            Request Your Blueprint →
+          </Link>
+        </div>
       </section>
     </Layout>
   )
