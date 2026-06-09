@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Small Steps, Big Results — 6th Ave Homes */
+
+:root {
+  --brand-navy: #043853;
+  --brand-coral: #ED6758;
+  --brand-taupe: #ABAEA7;
+  --brand-cream: #F8F0E6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--brand-cream);
+  color: #333;
+}
+
+/* Responsive YouTube embed */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+  box-shadow: 0 8px 24px rgba(4, 56, 83, 0.18);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Prose tweaks for module body */
+.prose-body p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+input[type='checkbox'] {
+  accent-color: var(--brand-coral);
+}
+
+@media (max-width: 640px) {
+  .prose-body p {
+    font-size: 1rem;
+  }
+}

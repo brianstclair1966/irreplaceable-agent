@@ -1,0 +1,33 @@
+import Link from 'next/link'
+import { PROGRAM } from '@/data/modules'
+
+export default function Layout({ children }) {
+  return (
+    <div className="min-h-screen bg-brand-cream flex flex-col">
+      <header className="bg-brand-navy text-white">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+          <Link href="/" className="flex flex-col leading-tight">
+            <span className="text-lg font-bold tracking-tight">6th Ave Homes</span>
+            <span className="text-xs text-brand-taupe">{PROGRAM.title}</span>
+          </Link>
+          <a
+            href={PROGRAM.playbookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-block text-sm font-semibold bg-brand-coral px-4 py-2 rounded-full hover:bg-opacity-90 transition"
+          >
+            AI Playbook ↗
+          </a>
+        </div>
+      </header>
+
+      <main className="flex-1 w-full">{children}</main>
+
+      <footer className="bg-white border-t border-gray-200 text-gray-500 text-xs py-8 mt-16">
+        <div className="max-w-5xl mx-auto px-6 text-center space-y-1">
+          <p>{PROGRAM.copyright}</p>
+        </div>
+      </footer>
+    </div>
+  )
+}

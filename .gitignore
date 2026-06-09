@@ -1,0 +1,17 @@
+/node_modules
+/.next
+/out
+/build
+.DS_Store
+*.pem
+.env*.local
+.vercel
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+*.log
+build.log
+
+# leftover asset from template
+public/ssbr-hero.png

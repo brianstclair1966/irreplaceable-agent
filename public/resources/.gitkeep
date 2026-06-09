@@ -1,0 +1,2 @@
+# Drop fillable PDFs here to host them in-app.
+# Then in src/data/modules.js, point that resource's `url` to "/resources/<filename>.pdf".
