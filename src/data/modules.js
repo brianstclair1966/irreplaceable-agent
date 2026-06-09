@@ -81,7 +81,7 @@ const modules = [
         heading: 'What this program actually is',
         resourceRefs: ['6th Ave AI Playbook'],
         paras: [
-          'This is not a course you pass — it’s a system you run. Over the next six sessions we’ll cover what Irreplaceable means, how you win, what actually moves your business, using AI the right way, building your personal system, and locking it in. Each week builds on the last. In Session 5 you get a personalized Blueprint built from your Culture Index, your past production, and how you naturally operate.',
+          'This is not a course you pass — it’s a system you run. Over the next six sessions we’ll cover what Irreplaceable means, how you win, what actually moves your business, using AI the right way, building your personal system, and locking it in. Each session builds on the last. In Session 5 you get a personalized Blueprint built from your Culture Index, your past production, and how you naturally operate.',
           'To support how you work right now, the 6th Ave AI Playbook is already live on the back-site — a growing library of prompts for real situations: listing packages, pricing, offers, social posts, objection reframes. Use it on a real deal this week. Don’t try to learn it all; just remove one piece of friction.',
         ],
       },
