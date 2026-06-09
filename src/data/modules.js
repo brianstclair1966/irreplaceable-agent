@@ -325,7 +325,7 @@ const modules = [
       },
     ],
     actionSteps: [
-      'Pick the prompt above that matches how you win and run it on your real pipeline this week.',
+      'Pick the prompt above that matches how you win and run it on your real pipeline this week (even one or two deals is enough).',
       'Notice where AI removed friction (what to say, what’s urgent, what you’re missing) — and save that prompt for reuse.',
       'Practice the loop on one deal: you think → AI organizes → you decide → AI supports → you adjust.',
     ],
@@ -363,7 +363,7 @@ const modules = [
     whyItMatters: [
       'Top agents rely on repeatable systems, not memory or motivation. A Blueprint turns your strengths into a daily operating system.',
       'Generic systems fail because they’re built for the average agent. When a system matches how you think, you use it — when it doesn’t, you abandon it.',
-      'Reviews are now AI-readable trust signals. Detailed, specific reviews teach AI who to trust and connect clients to the right agent.',
+      'Reviews can now double as AI-readable trust signals — detailed, specific ones help AI understand who to trust and connect clients to the right agent.',
       'Run the system and you’ll see results in 2–3 months — smoother workflow, faster decisions, more control.',
     ],
     lesson: [
@@ -401,7 +401,7 @@ const modules = [
         heading: 'Public proof is now for the machines too',
         resourceRefs: ['AI Aligned Testimonial Email'],
         paras: [
-          'Your reviews are no longer just for people — they’re for systems. The internet is teaching AI who is trustworthy, and detailed reviews that name your specific niche (“move-up buyer agent,” “luxury listing specialist”) become AI-readable trust signals that help AI connect the right clients to you. This isn’t manipulation — it’s helping the internet accurately understand how you serve people. Use the AI-Aligned Testimonial Email to request reviews that actually describe your expertise.',
+          'Your reviews aren’t just for people anymore — increasingly, they’re read by systems too. As AI learns who’s trustworthy, detailed reviews that name your specific niche (“move-up buyer agent,” “luxury listing specialist”) can act as AI-readable trust signals that help AI connect the right clients to you. This isn’t manipulation — it’s helping the internet accurately understand how you serve people. Use the AI-Aligned Testimonial Email to request reviews that actually describe your expertise.',
           'A word on privacy — this part matters. It’s fine to paste in your own marketing copy, listing descriptions, general scripts, and public market data. Never paste a client’s private or financial information — names, home or email addresses, account or loan numbers, Social Security numbers, contract dollar figures, or anything from a signed agreement. Strip identifying details first (say “my buyer” instead of a name), keep your AI tool’s “train on my data” setting turned off, and follow your brokerage’s technology and confidentiality policies. When in doubt, leave it out.',
         ],
       },
@@ -416,7 +416,7 @@ const modules = [
     actionSteps: [
       'Take your Culture Index survey if you haven’t — about 10 minutes, and it’s the foundation your Blueprint is built on.',
       'Complete the 7-step AI alignment process (Align Your AI — Start Here) — about 20–30 minutes.',
-      'Send the AI-Aligned Testimonial Email to a recent happy client to capture a specific, niche-naming review.',
+      'Send the AI-Aligned Testimonial Email to a recent happy client (or your most recent client, if you’re just starting) to capture a specific, niche-naming review.',
       'Want a Blueprint built for you? Submit your Culture Index and past production on the Request Your Blueprint page.',
     ],
     pitfalls: [
