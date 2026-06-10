@@ -8,7 +8,7 @@ export default function Layout({ children }) {
       <header className="bg-brand-navy text-white sticky top-0 z-40 shadow-md">
         <div className="max-w-5xl mx-auto px-6 py-3 flex items-center gap-3 sm:gap-6">
           <Link href="/" className="flex-shrink-0 flex items-center" aria-label="6th Ave Homes — home">
-            <img src="/logo-white.png" alt="6th Ave Homes" className="h-10 sm:h-11 w-auto" />
+            <img src="/6th-ave-logo.png" alt="6th Ave Homes" className="h-[48px] sm:h-[53px] w-auto" />
           </Link>
           <div className="flex-1 flex justify-end sm:justify-center">
             <SearchBar />
