@@ -1,20 +1,24 @@
 import Link from 'next/link'
 import { PROGRAM } from '@/data/modules'
+import SearchBar from '@/components/SearchBar'
 
 export default function Layout({ children }) {
   return (
     <div className="min-h-screen bg-brand-cream flex flex-col">
       <header className="bg-brand-navy text-white">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex flex-col leading-tight">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center gap-3 sm:gap-6">
+          <Link href="/" className="flex flex-col leading-tight flex-shrink-0">
             <span className="text-lg font-bold tracking-tight">6th Ave Homes</span>
-            <span className="text-xs text-brand-taupe">{PROGRAM.title}</span>
+            <span className="hidden sm:block text-xs text-brand-taupe">{PROGRAM.title}</span>
           </Link>
+          <div className="flex-1 flex justify-end sm:justify-center">
+            <SearchBar />
+          </div>
           <a
             href={PROGRAM.playbookUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-block text-sm font-semibold bg-brand-coral px-4 py-2 rounded-full hover:bg-opacity-90 transition"
+            className="hidden sm:inline-block flex-shrink-0 text-sm font-semibold bg-brand-coral px-4 py-2 rounded-full hover:bg-opacity-90 transition"
           >
             AI Playbook ↗
           </a>
