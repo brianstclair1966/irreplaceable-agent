@@ -5,11 +5,10 @@ import SearchBar from '@/components/SearchBar'
 export default function Layout({ children }) {
   return (
     <div className="min-h-screen bg-brand-cream flex flex-col">
-      <header className="bg-brand-navy text-white">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center gap-3 sm:gap-6">
-          <Link href="/" className="flex flex-col leading-tight flex-shrink-0">
-            <span className="text-lg font-bold tracking-tight">6th Ave Homes</span>
-            <span className="hidden sm:block text-xs text-brand-taupe">{PROGRAM.title}</span>
+      <header className="bg-brand-navy text-white sticky top-0 z-40 shadow-md">
+        <div className="max-w-5xl mx-auto px-6 py-3 flex items-center gap-3 sm:gap-6">
+          <Link href="/" className="flex-shrink-0 flex items-center" aria-label="6th Ave Homes — home">
+            <img src="/logo-white.png" alt="6th Ave Homes" className="h-10 sm:h-11 w-auto" />
           </Link>
           <div className="flex-1 flex justify-end sm:justify-center">
             <SearchBar />
