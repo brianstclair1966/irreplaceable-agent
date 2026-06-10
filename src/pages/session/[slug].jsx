@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
@@ -29,6 +30,17 @@ function Scripts({ scripts }) {
 }
 
 export default function SessionPage({ module, prev, next }) {
+  // Scroll to a deep-linked section (e.g. from search results) after load.
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const hash = window.location.hash
+    if (!hash) return
+    const el = document.getElementById(hash.slice(1))
+    if (el) {
+      setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60)
+    }
+  }, [module])
+
   if (!module) return null
 
   return (
@@ -68,7 +80,7 @@ export default function SessionPage({ module, prev, next }) {
 
         {/* Why it matters */}
         {module.whyItMatters && module.whyItMatters.length > 0 && (
-          <div className="mt-8 bg-white border border-gray-200 rounded-2xl p-6">
+          <div id="why-it-matters" className="scroll-mt-24 mt-8 bg-white border border-gray-200 rounded-2xl p-6">
             <h2 className="text-lg font-bold text-brand-navy mb-3">Why this matters</h2>
             <ul className="list-disc pl-5 space-y-2 text-gray-700">
               {module.whyItMatters.map((w, i) => (
@@ -82,7 +94,7 @@ export default function SessionPage({ module, prev, next }) {
         {module.lesson && module.lesson.length > 0 && (
           <div className="mt-10 space-y-8">
             {module.lesson.map((sec, i) => (
-              <section key={i}>
+              <section key={i} id={`s-${i}`} className="scroll-mt-24">
                 <h2 className="text-2xl font-bold text-brand-navy mb-3">{sec.heading}</h2>
                 {sec.paras &&
                   sec.paras.map((p, j) => (
@@ -114,7 +126,7 @@ export default function SessionPage({ module, prev, next }) {
         )}
 
         {/* Action steps */}
-        <h2 className="text-2xl font-bold text-brand-navy mt-12 mb-4">Do This Week</h2>
+        <h2 id="action-steps" className="scroll-mt-24 text-2xl font-bold text-brand-navy mt-12 mb-4">Do This Week</h2>
         <ol className="space-y-3">
           {module.actionSteps.map((step, i) => (
             <li key={i} className="flex gap-3 bg-white border border-gray-200 rounded-xl p-4">
@@ -129,7 +141,7 @@ export default function SessionPage({ module, prev, next }) {
         {/* Pitfalls */}
         {module.pitfalls && module.pitfalls.length > 0 && (
           <>
-            <h2 className="text-2xl font-bold text-brand-navy mt-10 mb-4">Pitfalls to Avoid</h2>
+            <h2 id="pitfalls" className="scroll-mt-24 text-2xl font-bold text-brand-navy mt-10 mb-4">Pitfalls to Avoid</h2>
             <ul className="space-y-2">
               {module.pitfalls.map((p, i) => (
                 <li key={i} className="flex gap-3 text-gray-700">
@@ -145,7 +157,7 @@ export default function SessionPage({ module, prev, next }) {
 
         {/* Rhythm */}
         {module.rhythm && module.rhythm.length > 0 && (
-          <div className="mt-10 bg-brand-navy text-white rounded-2xl p-6">
+          <div id="rhythm" className="scroll-mt-24 mt-10 bg-brand-navy text-white rounded-2xl p-6">
             <h2 className="text-xl font-bold mb-3">Your Rhythm</h2>
             <ul className="space-y-2">
               {module.rhythm.map((r, i) => (
@@ -165,13 +177,13 @@ export default function SessionPage({ module, prev, next }) {
 
         {/* Vision */}
         {module.vision && (
-          <p className="mt-8 text-lg italic text-brand-navy border-l-4 border-brand-coral pl-4">
+          <p id="vision" className="scroll-mt-24 mt-8 text-lg italic text-brand-navy border-l-4 border-brand-coral pl-4">
             {module.vision}
           </p>
         )}
 
         {/* Resources */}
-        <h2 className="text-2xl font-bold text-brand-navy mt-12 mb-4">Resources</h2>
+        <h2 id="resources" className="scroll-mt-24 text-2xl font-bold text-brand-navy mt-12 mb-4">Resources</h2>
         <div className="flex flex-wrap gap-3">
           {module.resources.map((r, i) => (
             <ResourcePill key={i} {...r} />
