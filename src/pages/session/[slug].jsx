@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Layout from '@/components/Layout'
 import VideoEmbed from '@/components/VideoEmbed'
 import ResourcePill from '@/components/ResourcePill'
+import Callout from '@/components/Callout'
 import CompleteButton from '@/components/CompleteButton'
 import modules, { getModule, PHASES } from '@/data/modules'
 
@@ -120,6 +121,7 @@ export default function SessionPage({ module, prev, next }) {
                       ))}
                   </div>
                 )}
+                {sec.callout && <Callout kind={sec.callout.kind} text={sec.callout.text} />}
               </section>
             ))}
           </div>
