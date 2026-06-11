@@ -7,11 +7,13 @@ import { PROGRAM } from '@/data/modules'
 import { getAgent } from '@/lib/progress'
 import { getBlueprint, setBlueprint, clearBlueprint } from '@/lib/blueprint'
 
+// Constrained set (BUILD-ORDER: the coach is a Blueprint interpreter, not a chatbot)
 const SUGGESTIONS = [
-  'Plan my day from my Blueprint',
-  'I’m feeling off track this week',
-  'Help me run my Weekly Reset',
-  'I keep avoiding my non-negotiable',
+  'Help me plan this week',
+  'Help me prioritize my leads',
+  'I’m stuck — what’s my next move?',
+  'Review my goals',
+  'What would Brian tell me?',
 ]
 
 export default function CoachPage() {
@@ -81,7 +83,7 @@ export default function CoachPage() {
   return (
     <Layout>
       <Head>
-        <title>Your Coach — Irreplaceable Agent</title>
+        <title>Blueprint Coach — Irreplaceable Agent</title>
       </Head>
 
       {/* Header band */}
@@ -90,13 +92,10 @@ export default function CoachPage() {
           <Link href="/" className="text-brand-taupe text-sm hover:text-white">
             ← Back to sessions
           </Link>
-          <p className="text-brand-coral font-semibold uppercase tracking-widest text-xs mt-4 mb-2">
-            Coaching · In Brian’s voice
-          </p>
-          <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight">Your Coach</h1>
+          <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight mt-4">Blueprint Coach</h1>
           <p className="text-gray-200 mt-3 text-lg">
-            Your Blueprint is your operating system. This is the coach that runs it with you —
-            grounded in your win-formula, your non-negotiables, and your system. Nothing generic.
+            It reads your Operating System and helps you apply it — your win-formula, your
+            non-negotiables, your next move. Nothing generic.
           </p>
         </div>
       </section>
@@ -122,16 +121,15 @@ export default function CoachPage() {
         {!ready && (
           <div className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8">
             <h2 className="text-xl font-bold text-brand-navy mb-2">
-              {editingBp ? 'Update your Blueprint' : 'Load your Blueprint'}
+              {editingBp ? 'Update your Operating System' : 'Load your Operating System'}
             </h2>
             <p className="text-sm text-gray-700 leading-relaxed mb-4">
-              The coach works strictly from <em>your</em> Blueprint. Open the Blueprint document
-              Brian built for you, select all, copy, and paste it below. It stays on your device.
-              Don’t have one yet?{' '}
-              <Link href={PROGRAM.blueprintPath} className="text-brand-coral font-semibold underline">
-                Request your Blueprint
+              The coach works strictly from <em>your</em> Operating System.{' '}
+              <Link href="/blueprint/generate" className="text-brand-coral font-semibold underline">
+                Generate your Blueprint
               </Link>{' '}
-              first.
+              and it loads here automatically — or paste the document Brian sent you below. It
+              stays on your device.
             </p>
             <form onSubmit={saveBlueprint} className="space-y-4">
               <textarea
