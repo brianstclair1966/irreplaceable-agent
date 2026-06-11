@@ -104,6 +104,28 @@ export default function Home() {
         ))}
       </section>
 
+      {/* Coach CTA */}
+      <section className="max-w-5xl mx-auto px-6 pb-8">
+        <div className="bg-white border border-brand-coral/40 rounded-2xl p-8 sm:p-10 text-center shadow-md">
+          <p className="text-brand-coral font-semibold uppercase tracking-widest text-xs mb-2">
+            New · In Brian’s voice
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy mb-3">
+            Have your Blueprint? Meet your Coach.
+          </h2>
+          <p className="text-gray-700 max-w-2xl mx-auto leading-relaxed">
+            Your Blueprint is the operating system — the Coach runs it with you. On-demand coaching
+            grounded in your win-formula, your non-negotiables, and your weekly reset. Nothing generic.
+          </p>
+          <Link
+            href="/coach"
+            className="inline-block mt-6 bg-brand-navy text-white font-semibold px-7 py-3 rounded-full hover:bg-opacity-90 transition"
+          >
+            Open Your Coach →
+          </Link>
+        </div>
+      </section>
+
       {/* Blueprint CTA */}
       <section className="max-w-5xl mx-auto px-6 pb-16">
         <div className="bg-brand-navy text-white rounded-2xl p-8 sm:p-10 text-center">
