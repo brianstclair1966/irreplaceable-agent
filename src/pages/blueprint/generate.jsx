@@ -334,7 +334,7 @@ export default function GenerateBlueprintPage() {
               )}
             </Field>
 
-            <Field label="Production report (xlsx, csv, or PDF)" hint="Your 2- or 5-year production sheet, MLS report, or a screenshot.">
+            <Field label="Production report (xlsx, csv, or PDF)" hint="Your 2- or 5-year production sheet, MLS report, or a screenshot. New to real estate? Skip this — we’ll build from your Culture Index.">
               {prodFile ? (
                 <p className="text-sm bg-brand-cream border border-gray-200 rounded-lg px-3 py-2 flex items-center justify-between gap-3">
                   <span className="text-brand-navy font-medium truncate">📎 {prodFile.name}</span>
