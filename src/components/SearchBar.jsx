@@ -35,7 +35,7 @@ function buildLessonRecords() {
         kind: 'lesson',
         section: sec.heading,
         anchor: `#s-${i}`,
-        text: [sec.heading, ...(sec.paras || []), ...(sec.list || []), scriptText]
+        text: [sec.heading, ...(sec.paras || []), ...(sec.list || []), scriptText, sec.callout?.text]
           .filter(Boolean)
           .join('. '),
       })
