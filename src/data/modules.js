@@ -75,6 +75,7 @@ const modules = [
       },
       {
         heading: 'Where the industry is actually going',
+        callout: { kind: 'miss-this', text: 'Every agent has the same AI tools — the edge isn’t access, it’s knowing how YOU win. That clarity is what turns AI from generic output into leverage.' },
         paras: [
           'Let’s be real about the direction. AI is here. More agents are entering the market. There’s more noise than ever. Buyers now have AI for searches and for learning the basics, so the old value — being the information source — is evaporating. AI won’t replace you. But agents using AI will. That’s not dramatic; that’s the trend.',
           'The good news: every agent has access to the same AI tools, but almost none of them know how to use it well, because they don’t know how they win. You will. That clarity — knowing your strengths, your rhythm, where you make decisions — is the thing AI can amplify. Without it, AI just gives generic output because it still thinks you’re generic.',
@@ -221,6 +222,7 @@ const modules = [
       },
       {
         heading: 'AI as decision support, not decision maker',
+        callout: { kind: 'coach-tip', text: 'Right after a showing, brain-dump into a voice-to-text app and let AI shape it into a clean client recap. You keep the judgment — AI just removes the typing.' },
         resourceRefs: ['6th Ave AI Playbook'],
         paras: [
           'AI can’t make the decision — but it can help you make a better one, faster. Brain-dump a showing into a dictation app and let AI organize your thoughts into a clean recap email. Drop in an inspection report and your buyer’s requests and ask AI to estimate costs and draft what to say yes and no to. The agent thinks, AI organizes; the agent decides, AI supports; the agent adjusts, AI gets better.',
@@ -318,6 +320,7 @@ const modules = [
       },
       {
         heading: 'The real shift',
+        callout: { kind: 'brians-take', text: 'The agents who say “the AI told me what to do” get stuck the moment it’s wrong. Stay the decision-maker — AI shows you patterns, you make the call.' },
         paras: [
           'Most agents become dependent on AI — “the AI told me what to do” — so when it’s wrong, they’re stuck. You don’t do that. AI shows you patterns; you make the decision. AI gives you options; you choose what’s right. AI supports your thinking; it never replaces it.',
           'AI didn’t change the game. Your clarity did. Agents who know how they win and use AI to remove friction are the ones becoming irreplaceable. And remember — generic AI changes nothing. It only works when it’s built around how YOU operate. That’s what we build next.',
@@ -376,6 +379,7 @@ const modules = [
       },
       {
         heading: 'What’s in your Blueprint',
+        callout: { kind: 'brians-take', text: 'A system you’ll actually run beats a perfect one you abandon. Your Blueprint works because it matches how you already think — don’t reshape it to look like generic training.' },
         paras: [
           'This isn’t theory — it’s a working system that replaces guesswork. Your Blueprint includes your Operating System, your Decision Framework, your AI Engine, your Daily Non-Negotiables, your Feedback Loop, and your Growth Corridor. It’s built in four steps: (1) your Culture Index — how you naturally think; (2) your Three Ways — where you win; (3) your Decision Triggers — the patterns you recognize better than anyone; and (4) your AI Engine — exactly how AI supports your way of thinking.',
           'Your operating style follows your primary way of winning — speed and momentum, process and certainty, or positioning and opportunity. Same business, different operating systems. And your AI Engine isn’t generic ChatGPT prompts; it’s built around your Culture Index and decision patterns, so the AI responds the way YOU naturally think.',
@@ -383,6 +387,7 @@ const modules = [
       },
       {
         heading: 'Before you use your Blueprint: align your AI',
+        callout: { kind: 'miss-this', text: 'Most agents type a few random questions, get generic answers, and decide AI “doesn’t work.” The miss is skipping the 20 minutes that teach it how YOU operate — do that first and everything downstream changes.' },
         resourceRefs: ['Align Your AI — Start Here'],
         paras: [
           'Most agents use AI like a search engine — they ask random questions, get generic answers, and decide “AI doesn’t work.” The real problem is that AI doesn’t understand how they think, communicate, or make decisions. Before you open your Blueprint, spend 20–30 minutes teaching AI how you operate. Don’t skip this — otherwise AI keeps giving generic output because it still thinks you’re generic.',
@@ -399,6 +404,7 @@ const modules = [
       },
       {
         heading: 'Public proof is now for the machines too',
+        callout: { kind: 'coach-tip', text: 'Ask happy clients to name what you specifically did well — “walked us through a brutal inspection,” “priced it right the first time.” Specific, niche-naming reviews are exactly what AI reads as trust.' },
         resourceRefs: ['AI Aligned Testimonial Email'],
         paras: [
           'Your reviews aren’t just for people anymore — increasingly, they’re read by systems too. As AI learns who’s trustworthy, detailed reviews that name your specific niche (“move-up buyer agent,” “luxury listing specialist”) can act as AI-readable trust signals that help AI connect the right clients to you. This isn’t manipulation — it’s helping the internet accurately understand how you serve people. Use the AI-Aligned Testimonial Email to request reviews that actually describe your expertise.',
@@ -475,6 +481,7 @@ const modules = [
       },
       {
         heading: 'The whole game: extreme ownership',
+        callout: { kind: 'miss-this', text: 'Motivation fades; consistency compounds. The agents who win aren’t the ones who learned the most — they’re the ones who actually ran the system.' },
         paras: [
           'Let’s be honest. You’ve heard a lot, you’ve had ideas, you’ve seen what works — but none of that matters if you don’t use it. Agents learn things, get motivated, say “this makes sense,” and then go right back to the same habits. Not because the training was wrong, but because they didn’t run it. This business rewards what you actually do.',
           'You already know enough. You know how you win, you know where you get paid, you know how to use AI to support it, and you’ve seen what happens when it’s consistent. You’re missing one thing: consistency. That’s why a system built around you is different — it fits how you work, which means you’ll actually run it. If you run your system, your business improves. If you don’t, nothing changes. That’s not opinion; that’s how this works.',
