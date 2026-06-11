@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
@@ -8,6 +8,7 @@ import { setBlueprint } from '@/lib/blueprint'
 import { getGeneration, setGeneration, clearGeneration, mdToHtml, downloadAsWord } from '@/lib/generator-store'
 
 const MAX_TOTAL_BYTES = 3 * 1024 * 1024 // stay under Vercel's body cap after base64
+const PIPE_KEY = 'ia_genpipe_v1' // sessionStorage: completed pipeline stages survive a reload
 
 const STEPS = [
   'Analyzing your Culture Index…',
@@ -71,6 +72,14 @@ export default function GenerateBlueprintPage() {
   const [error, setError] = useState('')
   const [result, setResult] = useState(null)
   const [openDoc, setOpenDoc] = useState('assessment')
+  const [retrying, setRetrying] = useState(false)
+  const [resumed, setResumed] = useState(false)
+
+  // Pipeline cache: completed stages survive an error (and, via sessionStorage,
+  // a page reload) so a retry RESUMES instead of restarting. Holds
+  // { encoded, extracted, passA, passB }. encoded (base64 files) is kept in
+  // memory only — too large for sessionStorage.
+  const pipeRef = useRef({})
 
   useEffect(() => {
     const a = getAgent()
@@ -79,12 +88,68 @@ export default function GenerateBlueprintPage() {
     if (existing?.operatingSystem) {
       setResult(existing)
       setPhase('done')
+      return
     }
+    try {
+      const cached = JSON.parse(window.sessionStorage.getItem(PIPE_KEY) || 'null')
+      if (cached?.extracted) {
+        pipeRef.current = cached
+        setResumed(true)
+      }
+    } catch {}
   }, [])
 
-  function set(key) {
-    return (e) => setForm((f) => ({ ...f, [key]: e.target.value }))
+  function persistPipe() {
+    try {
+      const { encoded, ...rest } = pipeRef.current
+      window.sessionStorage.setItem(PIPE_KEY, JSON.stringify(rest))
+    } catch {}
   }
+
+  function clearPipe() {
+    pipeRef.current = {}
+    setResumed(false)
+    try { window.sessionStorage.removeItem(PIPE_KEY) } catch {}
+  }
+
+  function set(key) {
+    return (e) => {
+      setForm((f) => ({ ...f, [key]: e.target.value }))
+      // Answers changed → cached Assessment/OS are stale (CI extraction isn't).
+      const pipe = pipeRef.current
+      if (pipe.passA || pipe.passB) {
+        delete pipe.passA
+        delete pipe.passB
+        persistPipe()
+      }
+    }
+  }
+
+  function setFile(setter) {
+    return (e) => {
+      setter(e.target.files?.[0] || null)
+      clearPipe() // different files → everything downstream is stale
+    }
+  }
+
+  // One automatic retry per stage before surfacing a stage-specific error.
+  async function postWithRetry(url, body, failMessage) {
+    try {
+      return await post(url, body)
+    } catch {
+      setRetrying(true)
+      try {
+        await new Promise((r) => setTimeout(r, 1500))
+        return await post(url, body)
+      } catch {
+        throw new Error(failMessage)
+      } finally {
+        setRetrying(false)
+      }
+    }
+  }
+
+  const SAFE_NOTE = ' Your answers and files are still here — tap "Build My Blueprint" to pick up right where it left off.'
 
   async function run(e) {
     e.preventDefault()
@@ -117,44 +182,60 @@ export default function GenerateBlueprintPage() {
     }
 
     setPhase('generating')
+    const pipe = pipeRef.current
     try {
-      // Step 1–2: extract CI + production
-      setStep(0)
-      const encoded = {}
-      if (ciFile) encoded.ciFile = { name: ciFile.name, type: ciFile.type, dataBase64: await fileToBase64(ciFile) }
-      if (prodFile) encoded.prodFile = { name: prodFile.name, type: prodFile.type, dataBase64: await fileToBase64(prodFile) }
-      const extracted = await post('/api/blueprint/extract', encoded)
+      // Step 1–2: extract CI + production (skipped on resume — already cached)
+      if (!pipe.extracted) {
+        setStep(0)
+        if (!pipe.encoded) {
+          const encoded = {}
+          if (ciFile) encoded.ciFile = { name: ciFile.name, type: ciFile.type, dataBase64: await fileToBase64(ciFile) }
+          if (prodFile) encoded.prodFile = { name: prodFile.name, type: prodFile.type, dataBase64: await fileToBase64(prodFile) }
+          pipe.encoded = encoded
+        }
+        pipe.extracted = await postWithRetry(
+          '/api/blueprint/extract',
+          pipe.encoded,
+          'Couldn’t read your files (connection hiccup).' + SAFE_NOTE
+        )
+        persistPipe()
+      }
+      const extracted = pipe.extracted
       setStep(1)
       await new Promise((r) => setTimeout(r, 900))
 
       // Step 3: Assessment (Pass A — includes the Confidence Note conflict check)
-      setStep(2)
-      const passA = await post('/api/blueprint/assessment', {
-        firstName,
-        lastName,
-        ci: extracted.ci,
-        production: extracted.productionSummary,
-        intake,
-      })
-
-      // Step 4: Operating System (Pass B — self-graded; retry once if any score < 8)
-      setStep(3)
-      let passB = await post('/api/blueprint/operating-system', {
-        firstName,
-        ci: extracted.ci,
-        assessment: passA.assessment,
-        intake,
-        attempt: 1,
-      })
-      if (passB.needsRetry) {
-        passB = await post('/api/blueprint/operating-system', {
-          firstName,
-          ci: extracted.ci,
-          assessment: passA.assessment,
-          intake,
-          attempt: 2,
-        })
+      if (!pipe.passA) {
+        setStep(2)
+        pipe.passA = await postWithRetry(
+          '/api/blueprint/assessment',
+          { firstName, lastName, ci: extracted.ci, production: extracted.productionSummary, intake },
+          'Couldn’t build your Assessment (connection hiccup).' + SAFE_NOTE
+        )
+        persistPipe()
       }
+      const passA = pipe.passA
+
+      // Step 4: Operating System (Pass B — self-graded; regenerate once if any score < 8)
+      if (!pipe.passB) {
+        setStep(3)
+        const osMsg = 'Couldn’t build your Operating System (connection hiccup).' + SAFE_NOTE
+        let passB = await postWithRetry(
+          '/api/blueprint/operating-system',
+          { firstName, ci: extracted.ci, assessment: passA.assessment, intake, attempt: 1 },
+          osMsg
+        )
+        if (passB.needsRetry) {
+          passB = await postWithRetry(
+            '/api/blueprint/operating-system',
+            { firstName, ci: extracted.ci, assessment: passA.assessment, intake, attempt: 2 },
+            osMsg
+          )
+        }
+        pipe.passB = passB
+        persistPipe()
+      }
+      const passB = pipe.passB
 
       // Step 5: prepare the coach + save everything
       setStep(4)
@@ -180,16 +261,18 @@ export default function GenerateBlueprintPage() {
         console.warn('Save failed (agent still has documents locally):', saveErr)
       }
 
+      clearPipe() // success — the cache has served its purpose
       setResult(generation)
       setPhase('done')
     } catch (err) {
-      setError(err.message || 'Something went wrong. Please try again.')
-      setPhase('form')
+      setError(err.message || ('Something went wrong.' + SAFE_NOTE))
+      setPhase('form') // form state, files, AND completed stages all survive
     }
   }
 
   function regenerate() {
     clearGeneration()
+    clearPipe()
     setResult(null)
     setPhase('form')
   }
@@ -221,6 +304,13 @@ export default function GenerateBlueprintPage() {
         {/* ───────────────────────────── INTAKE FORM ───────────────────────────── */}
         {phase === 'form' && (
           <form onSubmit={run} className="space-y-6">
+            {resumed && pipeRef.current?.extracted && (
+              <div className="bg-brand-cream border border-brand-coral/30 rounded-2xl p-4 text-sm text-gray-700">
+                <span className="font-semibold text-brand-navy">Picking up where you left off</span> —
+                your documents were already read{pipeRef.current.passA ? ' and your Assessment is built' : ''}.
+                No need to re-upload anything; just hit Build My Blueprint.
+              </div>
+            )}
             <div className="grid sm:grid-cols-2 gap-5">
               <Field label="Your name">
                 <input className={inputClass} value={form.name} onChange={set('name')} placeholder="Full name" />
@@ -234,11 +324,25 @@ export default function GenerateBlueprintPage() {
               label="Culture Index report (PDF)"
               hint="Already have your Culture Index PDF? Upload it. Don’t have it yet? No problem — Brian will pull it for you."
             >
-              <input type="file" accept=".pdf,image/*" onChange={(e) => setCiFile(e.target.files?.[0] || null)} className="block w-full text-sm text-gray-600" />
+              {ciFile ? (
+                <p className="text-sm bg-brand-cream border border-gray-200 rounded-lg px-3 py-2 flex items-center justify-between gap-3">
+                  <span className="text-brand-navy font-medium truncate">📎 {ciFile.name}</span>
+                  <button type="button" onClick={() => { setCiFile(null); clearPipe() }} className="text-xs text-brand-taupe underline hover:text-brand-coral flex-shrink-0">remove</button>
+                </p>
+              ) : (
+                <input type="file" accept=".pdf,image/*" onChange={setFile(setCiFile)} className="block w-full text-sm text-gray-600" />
+              )}
             </Field>
 
             <Field label="Production report (xlsx, csv, or PDF)" hint="Your 2- or 5-year production sheet, MLS report, or a screenshot.">
-              <input type="file" accept=".pdf,.csv,.xlsx,.xls,image/*" onChange={(e) => setProdFile(e.target.files?.[0] || null)} className="block w-full text-sm text-gray-600" />
+              {prodFile ? (
+                <p className="text-sm bg-brand-cream border border-gray-200 rounded-lg px-3 py-2 flex items-center justify-between gap-3">
+                  <span className="text-brand-navy font-medium truncate">📎 {prodFile.name}</span>
+                  <button type="button" onClick={() => { setProdFile(null); clearPipe() }} className="text-xs text-brand-taupe underline hover:text-brand-coral flex-shrink-0">remove</button>
+                </p>
+              ) : (
+                <input type="file" accept=".pdf,.csv,.xlsx,.xls,image/*" onChange={setFile(setProdFile)} className="block w-full text-sm text-gray-600" />
+              )}
             </Field>
 
             <div>
@@ -311,6 +415,11 @@ export default function GenerateBlueprintPage() {
                 </li>
               ))}
             </ol>
+            {retrying && (
+              <p className="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mt-5">
+                Connection hiccup — retrying… your progress is safe.
+              </p>
+            )}
             <p className="text-xs text-brand-taupe mt-6">This takes a minute or two — it’s actually reading your documents.</p>
           </div>
         )}
