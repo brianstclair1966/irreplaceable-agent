@@ -282,8 +282,9 @@ export default function GenerateBlueprintPage() {
               Build My Blueprint
             </button>
             <p className="text-xs text-brand-taupe">
-              Your draft goes to Brian to review and refine — he sends the official version. Don’t
-              include client private or financial details.
+              Your Assessment and Operating System are generated right here — yours to download and
+              keep. A copy is saved for Brian. Upload only your own Culture Index and production; no
+              client details needed.
             </p>
           </form>
         )}
@@ -388,7 +389,7 @@ export default function GenerateBlueprintPage() {
 
             <div className="text-center pt-2">
               <p className="text-xs text-brand-taupe mb-3">
-                This draft was saved for Brian — he’ll review, refine, and send your official version.
+                Your documents are ready to download above, and a copy was saved for Brian.
                 {result.lowest > 0 && result.lowest < 8 && ' (Quality check flagged this draft for extra attention.)'}
               </p>
               <button onClick={regenerate} className="text-sm text-brand-taupe underline hover:text-brand-coral">
