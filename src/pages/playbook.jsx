@@ -97,12 +97,16 @@ export default function PlaybookPage() {
   const [query, setQuery] = useState('')
   const [cat, setCat] = useState(null)
   const [openIds, setOpenIds] = useState({})
+  const [openTiers, setOpenTiers] = useState({})
 
   const toggle = (id) => setOpenIds((o) => ({ ...o, [id]: !o[id] }))
+  const toggleTier = (t) => setOpenTiers((o) => ({ ...o, [t]: !o[t] }))
 
   const handlePick = (id) => {
     setCat(null)
     setQuery('')
+    const tier = prompts.find((p) => p.id === id)?.tier
+    if (tier != null) setOpenTiers((o) => ({ ...o, [tier]: true }))
     setOpenIds((o) => ({ ...o, [id]: true }))
     setTimeout(() => {
       const el = document.getElementById(id)
@@ -213,15 +217,29 @@ export default function PlaybookPage() {
               if (!items.length) return null
               const tier = TIERS[t]
               const isSafety = t === 'safety'
+              const open = !!openTiers[t]
               return (
-                <section key={t} className="mb-10">
-                  <h2 className={`text-xl font-bold ${isSafety ? 'text-red-700' : 'text-brand-navy'}`}>{tier.label}</h2>
-                  <p className="text-sm text-brand-taupe mt-1 mb-4">{tier.blurb}</p>
-                  <div className="space-y-3">
-                    {items.map((p) => (
-                      <PromptCard key={p.id} p={p} open={!!openIds[p.id]} onToggle={() => toggle(p.id)} />
-                    ))}
-                  </div>
+                <section key={t} className="mb-3">
+                  <button
+                    type="button"
+                    onClick={() => toggleTier(t)}
+                    className={`w-full text-left flex items-start justify-between gap-4 rounded-2xl border px-5 py-4 transition hover:bg-brand-cream/40 ${isSafety ? 'border-red-300 bg-red-50/40' : 'border-gray-200 bg-white'}`}
+                  >
+                    <div className="min-w-0">
+                      <h2 className={`text-lg font-bold ${isSafety ? 'text-red-700' : 'text-brand-navy'}`}>
+                        {tier.label} <span className="text-sm font-normal text-brand-taupe">· {items.length}</span>
+                      </h2>
+                      <p className="text-sm text-brand-taupe mt-0.5">{tier.blurb}</p>
+                    </div>
+                    <span className={`text-brand-coral text-lg leading-none mt-1 transition-transform ${open ? 'rotate-90' : ''}`} aria-hidden>▶</span>
+                  </button>
+                  {open && (
+                    <div className="space-y-3 mt-3">
+                      {items.map((p) => (
+                        <PromptCard key={p.id} p={p} open={!!openIds[p.id]} onToggle={() => toggle(p.id)} />
+                      ))}
+                    </div>
+                  )}
                 </section>
               )
             })
