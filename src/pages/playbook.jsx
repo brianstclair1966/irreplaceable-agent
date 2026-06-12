@@ -140,17 +140,19 @@ export default function PlaybookPage() {
       </section>
 
       <article className="max-w-3xl mx-auto px-6 py-10">
-        {/* Concierge — the front door: tell it what's happening, it routes you */}
-        <PlaybookConcierge onPick={handlePick} />
-
-        {/* Compliance banner */}
-        <div className="mt-5 bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4">
+        {/* Compliance banner — sets the professional frame before any pasting */}
+        <div className="bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4">
           <p className="text-sm text-amber-900 leading-relaxed">
             🔒 <span className="font-semibold">Before you paste:</span> these prompts go into your AI assistant — a third-party tool. Strip client
             names, addresses, account/loan numbers, SSNs, and contract dollar figures first (say “my buyer” and round the numbers).
             Never paste signed documents, bank statements, or IDs. Keep your AI tool’s “train on my data” setting off, and follow your
             brokerage’s technology and confidentiality policy.
           </p>
+        </div>
+
+        {/* Concierge — the front door: tell it what's happening, it routes you */}
+        <div className="mt-5">
+          <PlaybookConcierge onPick={handlePick} />
         </div>
 
         {/* Browse the library (secondary to the concierge) */}
