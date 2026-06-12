@@ -27,7 +27,7 @@ export const INTRO = {
   spark: '🔥 Use ONE tool this week on a real deal.',
 }
 
-export const HOW_TO_USE = ['Copy the prompt', 'Paste into ChatGPT', 'Add your details', 'Review & tweak']
+export const HOW_TO_USE = ['Copy the prompt', 'Paste into your AI', 'Add your details', 'Review & tweak']
 
 export const TIERS = {
   1: { label: 'Tier 1 — Use These First', blurb: 'Done in 1–2 minutes. Use them on real deals.' },
