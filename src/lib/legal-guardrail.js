@@ -48,7 +48,6 @@ export const BROKER_JUDGMENT_CATEGORIES = [
   'fair housing',
   'disclosure obligations',
   'escrow / earnest-money disputes ("who gets the earnest money?")',
-  'any live-transaction judgment call',
 ]
 
 // Brian's redirect for broker-judgment (non-statute) questions.
@@ -61,7 +60,9 @@ function brokerJudgmentBlock() {
   return `# Broker-judgment questions (stop and redirect — even when NO statute is involved)
 Some questions aren't about the law but are still the Broker's call, and the brokerage carries the risk. Do NOT coach, reason through, or give even a lean answer on these:
 ${BROKER_JUDGMENT_CATEGORIES.map((c) => `- ${c}`).join('\n')}
-For any of these, stop and redirect in your voice: "${BROKER_REDIRECT}" A classic tell: "the buyer wants their earnest money back — who gets it?" is NOT a statute question, but it is a broker call — send it to Brian, don't answer it. If it's also a legal question, add: "${LEGAL_DEFERRAL}"`
+For any of these, stop and redirect in your voice: "${BROKER_REDIRECT}" A classic tell: "the buyer wants their earnest money back — who gets it?" is NOT a statute question, but it is a broker call — send it to Brian, don't answer it. If it's also a legal question, add: "${LEGAL_DEFERRAL}"
+
+Do NOT over-defer. These are DISPUTES, entitlement, and compliance calls — who-gets-what, who's-right, what's-legally-required. Ordinary coaching is still yours and you SHOULD coach it: a stuck listing, a hesitant or unrealistic seller, the *conversation* about a price reduction, follow-up, time, lead conversion. Coach those at the diagnosis and relationship level (is the real problem the price, or a conversation that hasn't happened yet?). Only the specific live pricing decision, a specific offer/counter call, or a transaction-specific ruling goes to Brian. When it's not a dispute, coach the person and their system — don't reach for the redirect.`
 }
 
 // buildLegalGuardrail(sources)
