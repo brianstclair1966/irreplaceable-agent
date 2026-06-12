@@ -387,13 +387,14 @@ const modules = [
       },
       {
         heading: 'Before you use your Blueprint: align your AI',
-        callout: { kind: 'miss-this', text: 'Most agents type a few random questions, get generic answers, and decide AI “doesn’t work.” The miss is skipping the 20 minutes that teach it how YOU operate — do that first and everything downstream changes.' },
+        callout: { kind: 'miss-this', text: 'The miss isn’t using AI — it’s using it cold. Spend the 20 minutes teaching it how you think and how you decide, and every answer downstream gets sharper.' },
         resourceRefs: ['Align Your AI — Start Here'],
         paras: [
-          'Most agents use AI like a search engine — they ask random questions, get generic answers, and decide “AI doesn’t work.” The real problem is that AI doesn’t understand how they think, communicate, or make decisions. Before you open your Blueprint, spend 20–30 minutes teaching AI how you operate. Don’t skip this — otherwise AI keeps giving generic output because it still thinks you’re generic.',
+          'Most agents use AI like a search engine. They ask generic questions and get generic answers. The problem isn’t AI — it’s context. AI doesn’t know how you think, communicate, make decisions, or run your business. Before you use your Blueprint, spend 20–30 minutes teaching AI who you are. The better the context, the better the output.',
         ],
         list: [
           'Tell AI who you are — let it interview you on how you win, communicate, and decide.',
+          'Explain how you make decisions — what gives you confidence, what causes hesitation, and where you tend to get stuck. AI becomes more useful when it understands how you decide, not just what you do.',
           'Explain your business — market, price point, clients, schedule, goals (the business you actually run, not the one you wish you had).',
           'Explain your strengths — relationships, organization, analysis, negotiation, systems, follow-through.',
           'Show AI where you need leverage — overthinking, inconsistency, follow-up hesitation, the friction that slows you down.',
