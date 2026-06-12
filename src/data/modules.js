@@ -367,7 +367,7 @@ const modules = [
       'Top agents rely on repeatable systems, not memory or motivation. A Blueprint turns your strengths into a daily operating system.',
       'Generic systems fail because they’re built for the average agent. When a system matches how you think, you use it — when it doesn’t, you abandon it.',
       'Public proof matters more than ever — AI systems increasingly rely on publicly available information to decide who looks credible and relevant, and detailed reviews help create that proof.',
-      'Run the system and you’ll see results in 2–3 months — smoother workflow, faster decisions, more control.',
+      'Run the system consistently and it compounds — smoother workflow, faster decisions, more control. The improvement comes from running it, not from a calendar.',
     ],
     lesson: [
       {
@@ -431,9 +431,9 @@ const modules = [
       'Never paste a client’s private or financial details into AI — strip names and numbers first, keep “train on my data” off, and follow brokerage policy.',
     ],
     rhythm: [
-      'First 2 weeks: get used to the rhythm of your system.',
-      'Weeks 3–4: you start seeing patterns.',
-      'Month 2–3: the system becomes automatic and your business runs differently.',
+      'At first: get used to the rhythm of your system.',
+      'As it sticks: you start seeing the patterns.',
+      'Over time: the system becomes automatic and your business runs differently.',
     ],
     vision:
       'You went from “I don’t know how I win” to “I know exactly how I win” to “I have a system built around how I win.” That’s ownership — and most agents never get here. Next session: where this system takes you.',
@@ -469,7 +469,7 @@ const modules = [
       {
         heading: 'What happens when you run this',
         paras: [
-          'Most agents never experience this, because they never run a system long enough. When you do: you stop second-guessing decisions, you move faster than other agents, clients trust you faster, you attract better opportunities, and you use AI to remove friction instead of replacing your thinking. The first two weeks you get used to the rhythm; weeks three and four you start seeing patterns; by day 30 your workflow is smoother, your decisions are faster, and you feel more in control. That’s just the beginning.',
+          'Most agents never experience this, because they never run a system long enough. When you do: you stop second-guessing decisions, you move faster than other agents, clients trust you faster, you attract better opportunities, and you use AI to remove friction instead of replacing your thinking. At first you get used to the rhythm; as it sticks you start seeing the patterns; and the longer you run it, the smoother your workflow, the faster your decisions, and the more in control you feel. That’s just the beginning.',
         ],
       },
       {
