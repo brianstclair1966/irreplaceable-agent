@@ -12,7 +12,7 @@ import { getAgent } from '@/lib/progress'
 
 const PREP_KEY = 'ia_bpprep_v1'
 const MAX_CI_BYTES = 3 * 1024 * 1024
-const CI_SURVEY_URL = 'https://surveys.cultureindex.com/s/dsK5s9LYO8/78525'
+const CI_SURVEY_URL = 'https://bit.ly/6thAveCultureIndex'
 
 function getPrepState() {
   if (typeof window === 'undefined') return null
