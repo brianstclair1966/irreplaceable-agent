@@ -140,23 +140,8 @@ export default function PlaybookPage() {
       </section>
 
       <article className="max-w-3xl mx-auto px-6 py-10">
-        {/* Start here */}
-        <div className="bg-white border border-gray-200 rounded-2xl p-6">
-          <p className="text-xs font-bold uppercase tracking-wide text-brand-coral mb-3">👉 Start here — don’t overthink it</p>
-          <ul className="space-y-1.5 text-gray-700">
-            {INTRO.startHere.map((s) => (
-              <li key={s.id} className="text-sm">
-                <span className="font-semibold text-brand-navy">{s.situation}</span> → use “{s.use}”
-              </li>
-            ))}
-          </ul>
-          <p className="mt-3 text-sm font-semibold text-brand-navy">{INTRO.spark}</p>
-        </div>
-
-        {/* Concierge — describe a situation, get the right prompt */}
-        <div className="mt-5">
-          <PlaybookConcierge onPick={handlePick} />
-        </div>
+        {/* Concierge — the front door: tell it what's happening, it routes you */}
+        <PlaybookConcierge onPick={handlePick} />
 
         {/* Compliance banner */}
         <div className="mt-5 bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4">
@@ -166,6 +151,12 @@ export default function PlaybookPage() {
             Never paste signed documents, bank statements, or IDs. Keep your AI tool’s “train on my data” setting off, and follow your
             brokerage’s technology and confidentiality policy.
           </p>
+        </div>
+
+        {/* Browse the library (secondary to the concierge) */}
+        <div className="mt-10">
+          <h2 className="text-xl font-bold text-brand-navy">Or browse the full library</h2>
+          <p className="text-sm text-brand-taupe mt-1">Every prompt, by tier. Search or filter to jump straight to what you need.</p>
         </div>
 
         {/* How to use */}
