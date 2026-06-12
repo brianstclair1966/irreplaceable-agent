@@ -1,6 +1,13 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
+const EXAMPLES = [
+  'Seller wants to overprice',
+  'Heading into a listing appointment',
+  'Buyer’s nervous about an inspection finding',
+  'Got a suspicious cash buyer',
+]
+
 function CopyBtn({ text }) {
   const [copied, setCopied] = useState(false)
   return (
@@ -27,10 +34,11 @@ export default function PlaybookConcierge({ onPick }) {
   const [result, setResult] = useState(null)
   const [error, setError] = useState('')
 
-  async function ask(e) {
+  async function ask(e, preset) {
     e?.preventDefault?.()
-    const s = situation.trim()
+    const s = (preset != null ? preset : situation).trim()
     if (s.length < 3) return
+    if (preset != null) setSituation(preset)
     setLoading(true)
     setError('')
     setResult(null)
@@ -51,36 +59,55 @@ export default function PlaybookConcierge({ onPick }) {
   }
 
   return (
-    <div className="bg-white border border-brand-coral/40 rounded-2xl p-6 shadow-md">
-      <p className="text-xs font-bold uppercase tracking-wide text-brand-coral mb-1">Not sure which to use?</p>
-      <h2 className="text-lg font-bold text-brand-navy mb-1">Describe your situation — I’ll find the right prompt.</h2>
-      <p className="text-sm text-gray-600 mb-4">
-        e.g. “angry seller who wants to overprice,” “buyer nervous about a roof finding,” “got a wire instruction email.”
+    <div className="bg-white border-2 border-brand-coral rounded-3xl p-6 sm:p-8 shadow-lg">
+      <p className="text-xs font-bold uppercase tracking-widest text-brand-coral mb-2">Need help? Start here</p>
+      <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy leading-tight">Tell me what’s in front of you.</h2>
+      <p className="text-gray-600 mt-2">
+        Describe your situation in plain words — I’ll find the right prompt and fill it in for you. No browsing required.
       </p>
 
-      <form onSubmit={ask} className="space-y-3">
+      <form onSubmit={ask} className="mt-5 space-y-3">
         <textarea
           value={situation}
           onChange={(e) => setSituation(e.target.value)}
           rows={2}
-          placeholder="What’s actually in front of you right now?"
-          className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:border-brand-coral resize-none"
+          placeholder="e.g. seller wants to overprice and it’s been sitting 60 days with no offers…"
+          className="w-full rounded-2xl border border-gray-300 px-4 py-3 text-[15px] focus:outline-none focus:border-brand-coral resize-none"
         />
-        <button
-          type="submit"
-          disabled={loading || situation.trim().length < 3}
-          className="bg-brand-coral text-white text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-opacity-90 transition disabled:opacity-60"
-        >
-          {loading ? 'Finding…' : 'Find my prompt →'}
-        </button>
+        <div className="flex flex-wrap items-center gap-3">
+          <button
+            type="submit"
+            disabled={loading || situation.trim().length < 3}
+            className="bg-brand-coral text-white text-sm font-semibold px-7 py-3 rounded-full hover:bg-opacity-90 transition disabled:opacity-60"
+          >
+            {loading ? 'Finding…' : 'Find my prompt →'}
+          </button>
+          <span className="text-xs text-brand-taupe">🔥 Then use ONE on a real deal this week.</span>
+        </div>
       </form>
 
-      {error && <p className="text-sm text-red-600 mt-3">{error}</p>}
+      {/* One-tap examples */}
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+        <span className="text-xs text-brand-taupe">Try:</span>
+        {EXAMPLES.map((ex) => (
+          <button
+            key={ex}
+            type="button"
+            onClick={() => ask(null, ex)}
+            disabled={loading}
+            className="text-xs px-3 py-1.5 rounded-full border border-gray-300 text-brand-navy bg-white hover:border-brand-coral hover:text-brand-coral transition disabled:opacity-60"
+          >
+            {ex}
+          </button>
+        ))}
+      </div>
+
+      {error && <p className="text-sm text-red-600 mt-4">{error}</p>}
 
       {result && (
-        <div className="mt-5 border-t border-gray-100 pt-4">
-          <p className="text-sm text-gray-700">
-            <span className="font-semibold text-brand-navy">→ Use “{result.title}.”</span> {result.why}
+        <div className="mt-6 border-t border-gray-100 pt-5">
+          <p className="text-[15px] text-gray-800">
+            <span className="font-bold text-brand-navy">→ Use “{result.title}.”</span> {result.why}
           </p>
           {result.tailored ? (
             <div className="mt-3 rounded-xl bg-brand-navy/[0.03] border border-gray-200">
@@ -102,7 +129,7 @@ export default function PlaybookConcierge({ onPick }) {
         </div>
       )}
 
-      <p className="text-xs text-brand-taupe mt-4">
+      <p className="text-xs text-brand-taupe mt-5">
         Want prompts and a daily system tuned to exactly how <span className="italic">you</span> win?{' '}
         <Link href="/blueprint/generate" className="text-brand-coral font-semibold underline hover:opacity-80">Build your Blueprint</Link>.
       </p>
