@@ -30,10 +30,10 @@ export const INTRO = {
 export const HOW_TO_USE = ['Copy the prompt', 'Paste into your AI', 'Add your details', 'Review & tweak']
 
 export const TIERS = {
-  1: { label: 'Tier 1 — Use These First', blurb: 'Done in 1–2 minutes. Use them on real deals.' },
-  2: { label: 'Tier 2 — When You Need More Help', blurb: 'A little more depth when the situation calls for it.' },
-  3: { label: 'Tier 3 — 6th Ave Systems', blurb: 'Structured templates built the 6th Ave way.' },
-  safety: { label: '🛡 Safety & Fraud Protection', blurb: 'Compliance-critical. Run these whenever something feels off — they take a minute and can save you thousands.' },
+  1: { label: 'Tier 1 — Use These First', blurb: 'The everyday ones — listing packages, open-house posts, objection reframes, market updates, email subject lines.' },
+  2: { label: 'Tier 2 — When You Need More Help', blurb: 'More depth when you need it — pricing/CMA, offer comparison, price-reduction talks, inspection & title help, message polish.' },
+  3: { label: 'Tier 3 — 6th Ave Systems', blurb: 'Structured 6th Ave templates — listing presentation, client onboarding, market analysis, transaction checklist.' },
+  safety: { label: '🛡 Safety & Fraud Protection', blurb: 'Scam-message checks, proof-of-funds & identity, wire-fraud — run whenever something feels off. A minute that can save thousands.' },
 }
 
 export const CATEGORIES = ['Listing', 'Pricing', 'Marketing', 'Communication', 'Transaction', 'Safety']
