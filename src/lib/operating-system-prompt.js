@@ -47,7 +47,7 @@ const OS_SECTIONS = `
 - **Your Positioning** — 1–2 sentences, including one line on "what makes you dangerous when you're operating well."
 - **Minimum Standard Each Day** — 3 bullets.
 - **Weekly Reset** — the Friday questions.
-- **Your Niche** — production-informed (real geography, price band, client type).
+- **Your Niche** — production-informed: real geography, price band, and client type — and where the data supports it, blend in the psychographic so it's one usable sentence (e.g. "move-up sellers in Mansfield who value decisive guidance").
 - **The Bigger Game** — 4 sub-sections (Filters · Patterns · Systems · Narrative). INCLUDE only for Strategic / high-energy profiles; omit for tighter ones.
 - **AI Setup (Do This First)** — one interview prompt in their voice.
 - **Use AI** — Daily Assistant prompts (or Strategic Thinking by timeframe for Strategic profiles).
@@ -68,6 +68,7 @@ export function buildOperatingSystemPrompt({ firstName = '', ci = {}, assessment
 - Plain real-estate language, NOT CI/psychometric language. "When you're talking to people, opportunities show up" beats "you have high social ability."
 - Specific over generic. Less is more — economy is part of the voice.
 - "Build leverage," never "protect energy." Brian coaches toward leverage, not preservation.
+- No predicted timelines or deal counts. Never "close 2–3 deals by Month 4" or "by Month 3 you'll…". Growth is conditional — run the system and you improve — never time-stamped or quantity-promised.
 
 # This agent
 - Name: ${firstName || '(agent)'} · CI Pattern: ${pattern || '(?)'} · Family (shape only): ${family}

@@ -39,6 +39,7 @@ export function buildAssessmentPrompt({ firstName = '', lastName = '', ci = {}, 
 2. Coach the person, not the profile. No "Persuaders like people, so talk to more people." Describe THIS person.
 3. Plain, real-estate language. Specific over abstract — real numbers, real client types, real behavior.
 4. Numbers discipline: only report figures that are actually in the production data. Do NOT compute new totals by adding rows that represent the same deals (e.g. list volume + sold volume = double-counting). When in doubt, quote the single summary figure the report already gives rather than inventing a "combined" total.
+5. No predicted timelines or deal counts. Do NOT write things like "close 2–3 deals by Month 4" or "the milestone to watch is Month 3." Growth is conditional — if they run the system, they improve — never time-stamped or quantity-promised.
 
 # CONFIDENCE NOTE (the conflict detector — required)
 Compare three signals: the CI pattern, what the production history implies about how they actually work, and the intake answers. If they cohere, proceed normally. If they MEANINGFULLY disagree (e.g. CI says high-energy risk-taker but production + intake read methodical/steady), open the Assessment with a short "⚠️ Confidence Note" that names the tension in one or two sentences and states which signal you're trusting (default: production + intake over the CI label). Do not silently paper over a mismatch.
