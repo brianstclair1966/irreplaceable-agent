@@ -31,7 +31,7 @@ export const PROGRAM = {
     'Irreplaceable Agent is a system built around you. Different agents win differently — some with speed and relationships, some with systems and detail, some with strategy and big-picture thinking. Over six sessions we figure out how YOU naturally win, where decisions actually get made, and how to use AI to remove friction instead of replacing your judgment. The result is a personalized operating system you can run every day.',
   mantra: 'AI won’t replace you. Agents using AI will. Clarity is the edge.',
   win: 'A 6th Ave Irreplaceable Agent understands how they win, builds around it, and uses clarity and AI to serve clients at a level that can’t be replaced.',
-  playbookUrl: 'https://www.6thavehomesagents.com/6th-ave-ai-playbook',
+  playbookUrl: '/playbook',
   cultureIndexUrl: 'https://bit.ly/6thAveCultureIndex',
   blueprintPath: '/blueprint',
   heroImage:
@@ -86,7 +86,7 @@ const modules = [
         resourceRefs: ['6th Ave AI Playbook'],
         paras: [
           'This is not a course you pass — it’s a system you run. Over the next six sessions we’ll cover what Irreplaceable means, how you win, what actually moves your business, using AI the right way, building your personal system, and locking it in. Each session builds on the last. Session 5 breaks down the Blueprint — the personalized operating system built from your Culture Index, your past production, and how you naturally operate — and shows you how to request your own.',
-          'To support how you work right now, the 6th Ave AI Playbook is already live on the back-site — a growing library of prompts for real situations: listing packages, pricing, offers, social posts, objection reframes. Use it on a real deal this week. Don’t try to learn it all; just remove one piece of friction.',
+          'To support how you work right now, the 6th Ave AI Playbook is built right into this program — a growing library of prompts for real situations: listing packages, pricing, offers, social posts, objection reframes. Use it on a real deal this week. Don’t try to learn it all; just remove one piece of friction.',
         ],
       },
     ],
@@ -110,7 +110,7 @@ const modules = [
     notesUrl: 'https://docs.google.com/document/d/16YAIf1MbVLMzLxUpJZUNiTFyFRW4w3RZgilV1QEKPCE/edit',
     slidesUrl: 'https://drive.google.com/file/d/1JgzP_k64O00doI2BAoMXL9WWO7gZO4k-/view',
     resources: [
-      { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: 'https://www.6thavehomesagents.com/6th-ave-ai-playbook' },
+      { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: '/playbook' },
     ],
   },
 
@@ -180,7 +180,7 @@ const modules = [
     notesUrl: 'https://docs.google.com/document/d/1ett2mg3CLHOlirkgXADDzRIG91BGqMF6ushjdxDqphQ/edit',
     slidesUrl: 'https://drive.google.com/file/d/1CMikhEJ3z81b42LL4C9E4-Mcxu-7kujO/view',
     resources: [
-      { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: 'https://www.6thavehomesagents.com/6th-ave-ai-playbook' },
+      { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: '/playbook' },
     ],
   },
 
@@ -250,7 +250,7 @@ const modules = [
     notesUrl: 'https://docs.google.com/document/d/1ihwHCSMw2xwRCjnpeQcPdyXlRSbqrcuLqDQhAYgEizQ/edit',
     slidesUrl: 'https://drive.google.com/file/d/1BzmVS3xKsuMN9H5uPfBmLcyDzzu_c7Gt/view',
     resources: [
-      { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: 'https://www.6thavehomesagents.com/6th-ave-ai-playbook' },
+      { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: '/playbook' },
     ],
   },
 
@@ -348,7 +348,7 @@ const modules = [
     notesUrl: 'https://docs.google.com/document/d/1DdynOz_uYw4qITndf3UEq8ANa52w4-VmBovOKYHKSZM/edit',
     slidesUrl: 'https://drive.google.com/file/d/1ynF4UXUrHr8_W2PhzcXkaJeBM2LrXdfJ/view',
     resources: [
-      { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: 'https://www.6thavehomesagents.com/6th-ave-ai-playbook' },
+      { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: '/playbook' },
     ],
   },
 
@@ -445,7 +445,7 @@ const modules = [
       { label: 'Build Your Blueprint', meta: 'Free · generated for you', type: 'blueprint', url: '/blueprint/generate' },
       { label: 'Align Your AI — Start Here', meta: 'PDF · 7-step setup', type: 'pdf', url: 'https://drive.google.com/file/d/1YFruPS3sK5h2SHEzhLOzfsauEq68drfE/view' },
       { label: 'AI Aligned Testimonial Email', meta: 'PDF', type: 'pdf', url: 'https://drive.google.com/file/d/1f0oQfbDy-EIlOR2NuGjyl5ovfyUKE2Aw/view' },
-      { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: 'https://www.6thavehomesagents.com/6th-ave-ai-playbook' },
+      { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: '/playbook' },
     ],
   },
 
@@ -516,7 +516,7 @@ const modules = [
     slidesUrl: 'https://drive.google.com/file/d/1AEvayvjfAK3zbf0_IlLbm-9QSk0wuUSl/view',
     resources: [
       { label: 'Commitment — Slides', meta: 'PDF', type: 'slides', url: 'https://drive.google.com/file/d/1qmAWdEUxWCBOlDel7HdzeI4YkZDWsHf3/view' },
-      { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: 'https://www.6thavehomesagents.com/6th-ave-ai-playbook' },
+      { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: '/playbook' },
     ],
   },
 ]
