@@ -6,7 +6,10 @@ import VideoEmbed from '@/components/VideoEmbed'
 import ResourcePill from '@/components/ResourcePill'
 import Callout from '@/components/Callout'
 import CompleteButton from '@/components/CompleteButton'
+import BlueprintPrep from '@/components/BlueprintPrep'
 import modules, { getModule, PHASES } from '@/data/modules'
+
+const CI_SURVEY_URL = 'https://surveys.cultureindex.com/s/dsK5s9LYO8/78525'
 
 function Scripts({ scripts }) {
   if (!scripts || !scripts.length) return null
@@ -78,6 +81,26 @@ export default function SessionPage({ module, prev, next }) {
 
         {/* Intro */}
         {module.intro && <p className="mt-8 text-gray-700 text-lg leading-relaxed">{module.intro}</p>}
+
+        {/* Session 5: CI reminder before they build */}
+        {module.slug === 'building-the-blueprint' && (
+          <div className="mt-6 bg-brand-cream border border-brand-coral/40 rounded-2xl p-5">
+            <p className="text-sm text-gray-800 leading-relaxed">
+              <span className="font-semibold text-brand-navy">Before you build:</span> make sure Brian
+              has your Culture Index — you’ll add it when you generate your Blueprint. Haven’t done it
+              yet?{' '}
+              <a
+                href={CI_SURVEY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-coral font-semibold underline hover:opacity-80"
+              >
+                Take the survey
+              </a>{' '}
+              (~10 min), then text Brian so he can send it to you.
+            </p>
+          </div>
+        )}
 
         {/* Why it matters */}
         {module.whyItMatters && module.whyItMatters.length > 0 && (
@@ -191,6 +214,13 @@ export default function SessionPage({ module, prev, next }) {
             <ResourcePill key={i} {...r} />
           ))}
         </div>
+
+        {/* Session 4: get the Culture Index started before Session 5 builds the Blueprint */}
+        {module.slug === 'using-ai-the-right-way' && (
+          <div className="mt-12">
+            <BlueprintPrep />
+          </div>
+        )}
 
         {/* Complete */}
         <div className="mt-12 border-t border-gray-200 pt-8">
