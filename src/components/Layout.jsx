@@ -13,14 +13,12 @@ export default function Layout({ children }) {
           <div className="flex-1 flex justify-end sm:justify-center">
             <SearchBar />
           </div>
-          <a
+          <Link
             href={PROGRAM.playbookUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="hidden sm:inline-block flex-shrink-0 text-sm font-semibold bg-brand-coral px-4 py-2 rounded-full hover:bg-opacity-90 transition"
           >
-            AI Playbook ↗
-          </a>
+            AI Playbook
+          </Link>
         </div>
       </header>
 
