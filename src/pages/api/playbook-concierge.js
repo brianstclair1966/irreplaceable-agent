@@ -6,6 +6,7 @@
 
 import prompts from '@/data/playbook'
 import { callClaude, apiConfigured, extractJson } from '@/lib/anthropic'
+import { legalGuardrailForRouter } from '@/lib/legal-guardrail'
 
 export const config = { maxDuration: 30 }
 
@@ -30,6 +31,7 @@ const SYSTEM = `You are the concierge for the 6th Ave AI Playbook — a fixed li
 
 Hard rules:
 - Recommend ONLY from the library below. Never invent a prompt. Never give general real-estate, legal, pricing, or compliance advice — your job is routing, not coaching.
+- ${legalGuardrailForRouter()}
 - Pick exactly ONE prompt: the best fit. If nothing fits well, pick the closest and make clear in "why" that it's a loose match.
 - Keep "why" to one short, plain sentence.
 - "tailored": if the agent gave concrete specifics (an address, an objection, numbers, a message), return the chosen prompt with those specifics slotted into the matching [PLACEHOLDERS]. Do NOT invent details they didn't give. If they didn't give enough to fill anything in, return null.
