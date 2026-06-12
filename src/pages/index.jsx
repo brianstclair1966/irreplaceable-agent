@@ -5,7 +5,6 @@ import Layout from '@/components/Layout'
 import ModuleCard from '@/components/ModuleCard'
 import ProgressBar from '@/components/ProgressBar'
 import AgentGate from '@/components/AgentGate'
-import BlueprintPrep from '@/components/BlueprintPrep'
 import WeeklyCheckin from '@/components/WeeklyCheckin'
 import modules, { PROGRAM, PHASES } from '@/data/modules'
 import { getCompleted, getAgent } from '@/lib/progress'
@@ -59,13 +58,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Blueprint prep (one-time, after name capture — materials ready by Session 5) */}
-      {agent && (
-        <section className="max-w-5xl mx-auto px-6 mt-6">
-          <BlueprintPrep agent={agent} />
-        </section>
-      )}
 
       {/* Weekly check-in (shown once the agent has added their name) */}
       {agent && (
