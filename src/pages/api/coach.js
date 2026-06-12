@@ -55,6 +55,26 @@ export default async function handler(req, res) {
     return res.status(400).json({ ok: false, error: 'Last message must be from you.' })
   }
 
+  // Anonymous coach-question log (Brian's learning loop): ONLY the question text +
+  // timestamp go to the sheet — never name, email, Blueprint, or the coach's reply.
+  // Non-blocking: logging must never break the coach.
+  const webhook = process.env.IA_SHEET_WEBHOOK_URL
+  if (webhook) {
+    try {
+      await fetch(webhook, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          kind: 'coach-question',
+          question: history[history.length - 1].content,
+          timestamp: new Date().toISOString(),
+        }),
+      })
+    } catch (e) {
+      console.warn('Coach-question logging failed (non-blocking):', e)
+    }
+  }
+
   const system = buildCoachSystemPrompt({
     firstName: String(firstName).split(' ')[0].slice(0, 40),
     blueprint: blueprint.slice(0, MAX_BLUEPRINT_CHARS),
