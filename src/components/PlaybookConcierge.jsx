@@ -63,7 +63,7 @@ export default function PlaybookConcierge({ onPick }) {
       <p className="text-xs font-bold uppercase tracking-widest text-brand-coral mb-2">Need help? Start here</p>
       <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-navy leading-tight">Tell me what’s in front of you.</h2>
       <p className="text-gray-600 mt-2">
-        Describe your situation in plain words — I’ll find the right prompt and fill it in for you. No browsing required.
+        Describe your situation in plain words — I’ll help you figure out the next move and hand you the prompt to run it. No browsing required.
       </p>
 
       <form onSubmit={ask} className="mt-5 space-y-3">
