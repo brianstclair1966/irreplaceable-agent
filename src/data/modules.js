@@ -374,7 +374,7 @@ const modules = [
         heading: 'First, know your wiring: the Culture Index',
         resourceRefs: ['Take Your Culture Index'],
         paras: [
-          'Your Blueprint is built on your Culture Index — a short, free work-style survey that maps how you’re naturally wired: how fast you move, how much structure you need, how you make decisions, and what energizes or drains you. It’s the same profile we use to understand how each agent operates, and it’s the foundation everything else is built on. If you haven’t taken it yet, take it now — it’s about 10 minutes, and your results feed directly into your Blueprint.',
+          'Your Blueprint is built on your Culture Index — a short, free work-style survey that maps how you’re naturally wired: how fast you move, how much structure you need, how you make decisions, and what energizes or drains you. It’s the same profile we use to understand how each agent operates, and it’s the foundation everything else is built on. You started this at the end of Session 4 — if you haven’t taken your Culture Index yet, it’s about 10 minutes, and your results feed directly into your Blueprint.',
         ],
       },
       {
@@ -413,9 +413,9 @@ const modules = [
       },
       {
         heading: 'Get your own Blueprint',
-        resourceRefs: ['Request Your Blueprint'],
+        resourceRefs: ['Build Your Blueprint'],
         paras: [
-          'This session shows you what a Blueprint is and the habits that make it work. Want one built specifically for you? It’s an optional, no-cost add-on: share your Culture Index results and a snapshot of your past production, and Brian builds your personalized Blueprint by hand — your operating system, decision framework, AI engine, and daily non-negotiables, mapped to exactly how you win. Submit yours and he’ll put it together.',
+          'This session shows you what a Blueprint is and the habits that make it work. Want yours? It’s an optional, no-cost add-on — and you build it right here. Add your Culture Index and a snapshot of your production, answer six quick questions, and your Blueprint is generated for you on the spot: your Assessment (who you are) and your Operating System (how you win, daily), in Brian’s coaching voice. It’s yours to download and keep, and a copy is saved for Brian. New to real estate? You can skip production — your Culture Index and the six questions are enough.',
         ],
       },
     ],
@@ -423,7 +423,7 @@ const modules = [
       'Take your Culture Index survey if you haven’t — about 10 minutes, and it’s the foundation your Blueprint is built on.',
       'Complete the 7-step AI alignment process (Align Your AI — Start Here) — about 20–30 minutes.',
       'Send the AI-Aligned Testimonial Email to a recent happy client (or your most recent client, if you’re just starting) to capture a specific, niche-naming review.',
-      'Want a Blueprint built for you? Submit your Culture Index and past production on the Request Your Blueprint page.',
+      'Want your Blueprint? Build it on the Your Blueprint page — add your Culture Index, answer six questions, and it’s generated for you instantly (production optional if you’re new).',
     ],
     pitfalls: [
       'Don’t use your Blueprint like someone else would — if you modify it to match generic training, it breaks.',
@@ -441,7 +441,7 @@ const modules = [
     slidesUrl: 'https://drive.google.com/file/d/1Fbhit6fYsda9eoacW49qtKaP3XVOFghJ/view',
     resources: [
       { label: 'Take Your Culture Index', meta: 'Survey · ~10 min', type: 'survey', url: 'https://bit.ly/6thAveCultureIndex' },
-      { label: 'Request Your Blueprint', meta: 'Free · built for you', type: 'blueprint', url: '/blueprint' },
+      { label: 'Build Your Blueprint', meta: 'Free · generated for you', type: 'blueprint', url: '/blueprint/generate' },
       { label: 'Align Your AI — Start Here', meta: 'PDF · 7-step setup', type: 'pdf', url: 'https://drive.google.com/file/d/1YFruPS3sK5h2SHEzhLOzfsauEq68drfE/view' },
       { label: 'AI Aligned Testimonial Email', meta: 'PDF', type: 'pdf', url: 'https://drive.google.com/file/d/1f0oQfbDy-EIlOR2NuGjyl5ovfyUKE2Aw/view' },
       { label: '6th Ave AI Playbook', meta: 'Prompt library', type: 'link', url: 'https://www.6thavehomesagents.com/6th-ave-ai-playbook' },
