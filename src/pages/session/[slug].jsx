@@ -9,7 +9,7 @@ import CompleteButton from '@/components/CompleteButton'
 import BlueprintPrep from '@/components/BlueprintPrep'
 import modules, { getModule, PHASES } from '@/data/modules'
 
-const CI_SURVEY_URL = 'https://surveys.cultureindex.com/s/dsK5s9LYO8/78525'
+const CI_SURVEY_URL = 'https://bit.ly/6thAveCultureIndex'
 
 function Scripts({ scripts }) {
   if (!scripts || !scripts.length) return null
