@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
 import prompts, { INTRO, HOW_TO_USE, TIERS, CATEGORIES, CLOSING } from '@/data/playbook'
+import PlaybookConcierge from '@/components/PlaybookConcierge'
 
 const TIER_ORDER = [1, 'safety', 2, 3]
 
@@ -30,7 +31,7 @@ function CopyButton({ text }) {
 function PromptCard({ p, open, onToggle }) {
   const isSafety = p.tier === 'safety'
   return (
-    <div className={`rounded-2xl border ${isSafety ? 'border-red-300 bg-red-50/40' : 'border-gray-200 bg-white'} overflow-hidden`}>
+    <div id={p.id} className={`scroll-mt-24 rounded-2xl border ${isSafety ? 'border-red-300 bg-red-50/40' : 'border-gray-200 bg-white'} overflow-hidden`}>
       <button
         type="button"
         onClick={onToggle}
@@ -99,6 +100,16 @@ export default function PlaybookPage() {
 
   const toggle = (id) => setOpenIds((o) => ({ ...o, [id]: !o[id] }))
 
+  const handlePick = (id) => {
+    setCat(null)
+    setQuery('')
+    setOpenIds((o) => ({ ...o, [id]: true }))
+    setTimeout(() => {
+      const el = document.getElementById(id)
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 60)
+  }
+
   const filtering = query.trim().length > 0 || cat
   const q = query.trim().toLowerCase()
 
@@ -142,10 +153,15 @@ export default function PlaybookPage() {
           <p className="mt-3 text-sm font-semibold text-brand-navy">{INTRO.spark}</p>
         </div>
 
+        {/* Concierge — describe a situation, get the right prompt */}
+        <div className="mt-5">
+          <PlaybookConcierge onPick={handlePick} />
+        </div>
+
         {/* Compliance banner */}
         <div className="mt-5 bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4">
           <p className="text-sm text-amber-900 leading-relaxed">
-            🔒 <span className="font-semibold">Before you paste:</span> these prompts go into ChatGPT — a third party. Strip client
+            🔒 <span className="font-semibold">Before you paste:</span> these prompts go into your AI assistant — a third-party tool. Strip client
             names, addresses, account/loan numbers, SSNs, and contract dollar figures first (say “my buyer” and round the numbers).
             Never paste signed documents, bank statements, or IDs. Keep your AI tool’s “train on my data” setting off, and follow your
             brokerage’s technology and confidentiality policy.
